@@ -1,9 +1,13 @@
 const express = require("express");
-const indexRoutes = require("./routes/index.routes.js");
+const paymentRoutes = require("./routes/payment.routes.js");
+const connectDB = require("./database");
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
-app.use(indexRoutes);
+//mongodb connection
+connectDB();
+
+app.use(paymentRoutes);
 
 app.listen(port, () => console.log("server listening on port", port));
