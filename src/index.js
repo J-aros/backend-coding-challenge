@@ -8,6 +8,9 @@ const port = process.env.PORT || 8080;
 //mongodb connection
 connectDB();
 
-app.use(paymentRoutes);
+//middleware
+app.use(express.json());
+
+app.use("/", paymentRoutes);
 
 app.listen(port, () => console.log("server listening on port", port));
