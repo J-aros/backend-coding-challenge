@@ -1,6 +1,6 @@
 const express = require("express");
-const paymentRoutes = require("./routes/payment.routes.js");
-const connectDB = require("./database");
+const paymentRoutes = require("./routes/PaymentRoutes/payment.routes");
+const connectDB = require("./lib/Database/database");
 
 const app = express();
 const port = process.env.PORT || 8080;
